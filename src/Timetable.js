@@ -29,59 +29,36 @@ class Timetable extends Component {
       return (
         <React.Fragment>
           <h1 style={h1}>Timetable</h1>
-          <Card>
-            <CardActionArea style={card}>
-              <CardMedia
-                style={media}
-                image='https://images.unsplash.com/photo-1501066927591-314112b5888e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80'
-                title='Contemplative Reptile'>
-                <CardContent>
-                  <Typography gutterBottom variant='h5' component='h2'>
-                    beginning talks
-                  </Typography>
-                  <Typography gutterBottom variant='h6' component='h2'>
-                    by David Lorenz
-                  </Typography>
-                  <Typography variant='body2' component='p'>
-                    starts at 9.30 to 10.15
-                  </Typography>
-                  <Typography variant='body2' component='p'>
-                    room Bertha
-                  </Typography>
-                </CardContent>
-              </CardMedia>
-            </CardActionArea>
-          </Card>
+
+          {this.state.timetable[0].timeslot.map(slot => (
+            <Card style={card}>
+              <CardActionArea style={cardaction}>
+                <CardMedia
+                  style={media}
+                  image='https://images.unsplash.com/photo-1558445941-3e4f497931b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80'
+                  title='Mercedes car'>
+                  <CardContent style={flexcontent}>
+                    <Typography gutterBottom variant='h6' component='h2'>
+                      {slot.topic} - David Lorenz
+                    </Typography>
+                    <Typography variant='body2' component='p'>
+                      starts at {slot.starttime} to {slot.endtime}
+                    </Typography>
+                    <Typography variant='body2' component='p'>
+                      {slot.venue}
+                    </Typography>
+                  </CardContent>
+                </CardMedia>
+              </CardActionArea>
+            </Card>
+          ))}
         </React.Fragment>
       );
     } else {
       return (
-        // default card component to be displayed if there is no data, only hardcoded values
         <React.Fragment>
           <h1 style={h1}>Timetable</h1>
-          <Card>
-            <CardActionArea style={card}>
-              <CardMedia
-                style={media}
-                image='https://images.unsplash.com/photo-1501066927591-314112b5888e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80'
-                title='Contemplative Reptile'>
-                <CardContent>
-                  <Typography gutterBottom variant='h5' component='h2'>
-                    beginning talks
-                  </Typography>
-                  <Typography gutterBottom variant='h6' component='h2'>
-                    by David Lorenz
-                  </Typography>
-                  <Typography variant='body2' component='p'>
-                    starts at 9.30 to 10.15
-                  </Typography>
-                  <Typography variant='body2' component='p'>
-                    room Bertha
-                  </Typography>
-                </CardContent>
-              </CardMedia>
-            </CardActionArea>
-          </Card>
+          <h2 style={h2}>Sorry the talks are not yet annouced</h2>
         </React.Fragment>
       );
     }
@@ -92,14 +69,28 @@ export default Timetable;
 
 //style
 const card = {
+  margin: '10px 30px 10px 30px ',
+};
+const cardaction = {
   maxWidth: 345,
   color: 'white',
-  textShadow: ' 2px 2px 2px rgba(0, 0, 0, 1)',
+  textShadow: '3px 3px 3px rgba(0, 0, 0, 1)',
 };
 const media = {
   height: 140,
-  opacity: 0.8,
 };
 const h1 = {
   color: '#8df3de',
+  margin: '10px 30px 10px 30px ',
+};
+const h2 = {
+  color: 'white',
+  margin: '10px 30px 10px 30px ',
+};
+const flexcontent = {
+  display: 'flex',
+  flexDirection: 'column',
+  textAlign: 'center',
+  backgroundColor: '#00000060',
+  height: '100%',
 };
