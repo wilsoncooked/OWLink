@@ -2,18 +2,26 @@
   color: #6539ec;
 }
 
+.purple-background {
+  background-color: #6539ec;
+}
+
 .green-text {
   color: #8df3de;
 }
 
+.green-background {
+  background-color: #8df3de;
+}
+
 .dark-color {
-  color: #1d1b27;
+  background-color: #1d1b27;
 }
 
 .dark-color-lighter {
-  color: #292638;
+  background-color: #292638;
 }
 
 .dark-color-darker {
-  color: #14131a;
+  background-color: #14131a;
 }
