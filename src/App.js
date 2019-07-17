@@ -1,8 +1,13 @@
 import React from 'react';
-import './App.css';
+import Timetable from './Timetable';
 
 function App() {
-  return <div className='App' />;
+  return (
+    <div>
+      <h1>OWLink</h1>
+      <Timetable />
+    </div>
+  );
 }
 
 export default App;
