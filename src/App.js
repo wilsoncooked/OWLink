@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
-import Profile from './profile';
+import Profile from './Profile/profile';
 
 function App() {
   return (
     <div className='App'>
-      <h1>OWLink</h1>
       <Profile />
     </div>
   );
