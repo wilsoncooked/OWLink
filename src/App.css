@@ -25,3 +25,23 @@
 .dark-color-darker {
   background-color: #14131a;
 }
+
+.catagory-button {
+  border: 3px solid #8df3de;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: #8df3de;
+  background-color: #292638;
+}
+
+.catagory-button-active {
+  border: 3px solid #8df3de;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: #8df3de;
+  background-color: #6539ec;
+}
+
+button:focus {
+  outline: none;
+}
