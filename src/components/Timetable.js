@@ -73,8 +73,6 @@ const card = {
 };
 const cardaction = {
   maxWidth: 345,
-  color: 'white',
-  textShadow: '3px 3px 3px rgba(0, 0, 0, 1)',
 };
 const media = {
   height: 140,
@@ -91,6 +89,6 @@ const flexcontent = {
   display: 'flex',
   flexDirection: 'column',
   textAlign: 'center',
-  backgroundColor: '#00000060',
+  backgroundColor: '#ffffff99',
   height: '100%',
 };
