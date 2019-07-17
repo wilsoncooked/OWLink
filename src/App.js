@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import './App.css';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import Profile from './pages/Profile';
@@ -16,6 +17,16 @@ function App() {
         </Switch>
       </BrowserRouter>
     </React.Fragment>
+=======
+import Timetable from './Timetable';
+
+function App() {
+  return (
+    <div>
+      <h1>OWLink</h1>
+      <Timetable />
+    </div>
+>>>>>>> develop
   );
 }
 
