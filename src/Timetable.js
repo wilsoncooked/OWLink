@@ -10,9 +10,11 @@ const useStyles = makeStyles({
   card: {
     maxWidth: 345,
     margin: 30,
+    color: 'white',
   },
   media: {
     height: 140,
+    opacity: 0.7,
   },
 });
 
@@ -28,11 +30,16 @@ export default function MediaCard() {
           title='Contemplative Reptile'>
           <CardContent>
             <Typography gutterBottom variant='h5' component='h2'>
-              Lizard
+              beginning talks
             </Typography>
-            <Typography variant='body2' color='dark' component='p'>
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
+            <Typography gutterBottom variant='h7' component='h2'>
+              by David Lorenz
+            </Typography>
+            <Typography variant='body2' component='p'>
+              starts at 9.30 to 10.15
+            </Typography>
+            <Typography variant='body2' component='p'>
+              room Bertha
             </Typography>
           </CardContent>
         </CardMedia>
