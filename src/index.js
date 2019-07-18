@@ -3,20 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import * as firebase from 'firebase';
+import firebase from './firebase/firebase';
+import FirebaseContext, {withFirebase} from '.firebase/context';
 
-var firebaseConfig = {
-  apiKey: 'AIzaSyDSuDBGWwDlpPSu5KyHqhya5Iziyi2pFqE',
-  authDomain: 'owlink-a4f32.firebaseapp.com',
-  databaseURL: 'https://owlink-a4f32.firebaseio.com',
-  projectId: 'owlink-a4f32',
-  storageBucket: '',
-  messagingSenderId: '620782128710',
-  appId: '1:620782128710:web:25b74d543db9d394',
-};
-firebase.initializeApp(firebaseConfig);
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <FirebaseAuthProvider firebase={firebase} {...config}>
+    <App />
+  </FirebaseAuthProvider>,
+  document.getElementById('root'),
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

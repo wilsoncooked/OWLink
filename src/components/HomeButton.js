@@ -23,15 +23,15 @@ export default function HomeButton() {
 
   return (
     <React.Fragment>
-      <Link
+      {/* <Link
         className={classes.link}
         to={{
           pathname: `/Timetable`,
-        }}>
-        <Fab variant='extended' aria-label='Delete' className={classes.fab}>
-          Enter
-        </Fab>
-      </Link>
+        }}> */}
+      <Fab variant='extended' aria-label='Delete' className={classes.fab}>
+        Login
+      </Fab>
+      {/* </Link> */}
     </React.Fragment>
   );
 }
