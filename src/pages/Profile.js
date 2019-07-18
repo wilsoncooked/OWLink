@@ -19,6 +19,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import Button from '@material-ui/core/Button';
+import StarIcon from '@material-ui/icons/Star';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 export default function Profile() {
   return (
@@ -72,30 +74,8 @@ function ListOfIdeas() {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              <List dense>
-                <ListItem>
-                  {/* <ListItemAvatar>
-                    <Avatar>
-                      <FolderIcon />
-                    </Avatar>
-                  </ListItemAvatar> */}
-                  <ListItemText>aa</ListItemText>
-                  <ListItemSecondaryAction>
-                    <IconButton edge='end' aria-label='Delete'>
-                      <DeleteIcon />
-                    </IconButton>
-                    <Badge color='primary' badgeContent={4}>
-                      <IconButton edge='end' aria-label='Delete'>
-                        <DeleteIcon />
-                      </IconButton>
-                      {/* <Button variant='contained'>Button</Button> */}
-                    </Badge>
-                  </ListItemSecondaryAction>
-                </ListItem>
-                {/* <ListItem>
-                  <ListItemText>aa</ListItemText>
-                </ListItem> */}
-              </List>
+              <p>Venture in Niche Affiliate Marketing</p>
+              <p>Create a Startup that Supports the Gardening Industry</p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
