@@ -83,7 +83,9 @@ export default class UserInfo extends Component {
                 ContentProps={{
                   'aria-describedby': 'message-id',
                 }}
-                message={<span id='message-id'>I love snacks</span>}
+                message={
+                  <span id='message-id'>You've sent invitation to {name}</span>
+                }
               />
             </Box>
           </Box>
