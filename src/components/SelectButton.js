@@ -1,5 +1,15 @@
 import React from 'react';
 
+const catagories = [
+  'fintech',
+  'foodtech',
+  'psychtech',
+  'community',
+  'AI',
+  'environment',
+  'robots',
+];
+
 class SelectButton extends React.Component {
   constructor(props) {
     super(props);
@@ -10,10 +20,11 @@ class SelectButton extends React.Component {
     this.toggleClass = this.toggleClass.bind(this);
   }
 
-  toggleClass(e) {
-    const currentState = this.state.selected;
-    this.setState({selected: !currentState});
-    this.componentShouldUpdate();
+  toggleClass() {
+    // const currentState = this.state.selected;
+    // this.setState({selected: !currentState});
+    // this.componentShouldUpdate();
+    // console.log(e);
   }
 
   componentShouldUpdate(e) {
@@ -25,15 +36,18 @@ class SelectButton extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <div>
-        <button
-          name='react.js'
-          className={
-            this.state.selected ? 'catagory-button-active' : 'catagory-button'
-          }
-          onClick={this.toggleClass}>
-          <b>React.js</b>
-        </button>
+      <div className='buttons-wrapper'>
+        {catagories.map((name, index) => {
+          return (
+            <button
+              name={name}
+              key={index}
+              className='category-button'
+              onClick={this.toggleClass}>
+              <b>{name}</b>
+            </button>
+          );
+        })}
       </div>
     );
   }
