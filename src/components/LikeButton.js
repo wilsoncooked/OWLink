@@ -6,18 +6,22 @@ import Favorite from '@material-ui/icons/Favorite';
 const useStyles = makeStyles(theme => ({
   button: {
     margin: theme.spacing(1),
+    transform: 'scale(1.2)',
   },
   input: {
     display: 'none',
   },
 }));
 
-export default function IconButtons() {
+export default function Like() {
   const classes = useStyles();
 
   return (
     <div>
-      <IconButton className={classes.button} aria-label='Delete'>
+      <IconButton
+        color='primary'
+        className={classes.button}
+        aria-label='Delete'>
         <Favorite color='primary' />
       </IconButton>
     </div>

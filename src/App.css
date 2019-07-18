@@ -25,3 +25,10 @@
 .dark-color-darker {
   background-color: #14131a;
 }
+.MuiExpansionPanelDetails-root {
+  padding: 0 !important;
+}
+
+.MuiSvgIcon-root {
+  color: #6539ec;
+}

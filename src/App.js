@@ -13,10 +13,10 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/profile' component={Profile} />
+          <Route exack path='/profile' component={Profile} />
           <Route exact path='/timetable' component={TimetableOverview} />
           <Route path='/timetable/idea/new' component={NewIdeaForm} />
-          <Route path='/timetable/:id' component={TalkDetails} />
+          <Route path='/timetable/idea' component={TalkDetails} />
         </Switch>
       </BrowserRouter>
     </React.Fragment>
