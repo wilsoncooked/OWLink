@@ -14,7 +14,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/profile' component={Profile} />
-          <Route path='notification' component={Notification} />
+          <Route path='/notification' component={Notification} />
           <Route path='/timetable' component={TimetableOverview} />
           <Route path='/timetable/idea/new' component={NewIdeaForm} />
         </Switch>
