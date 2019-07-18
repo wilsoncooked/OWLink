@@ -12,6 +12,8 @@ const useStyles = makeStyles(theme => ({
     minWidth: '170px',
     minHeight: '60px',
     fontSize: '1.5em',
+    border: '2px solid #8df3de',
+    borderRadius: ' 20px',
     textDecoration: 'none',
   },
   link: {
