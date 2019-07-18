@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Chip from '@material-ui/core/Chip';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -9,25 +10,21 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import FolderIcon from '@material-ui/icons/Folder';
-import DeleteIcon from '@material-ui/icons/Delete';
-import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
-import Button from '@material-ui/core/Button';
-import StarIcon from '@material-ui/icons/Star';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 export default function Profile() {
   return (
     <React.Fragment>
       <Grid container justify='center' alignItems='center'>
-        <UserInfo />
-        <ListOfIdeas />
+        <Box display='flex' flexDirection='column'>
+          <UserInfo />
+          <ListOfIdeas title={'Idea List'} />
+          <ListOfIdeas title={'Join List'} />
+        </Box>
       </Grid>
     </React.Fragment>
   );
@@ -53,15 +50,17 @@ function UserInfo() {
             the mussels, if you like.
           </Typography>
         </CardContent>
-        <Chip label='front-end' style={{margin: '10px'}} />
-        <Chip label='back-end' style={{margin: '10px'}} />
-        <Chip label='design' style={{margin: '10px'}} />
+        <Box>
+          <Chip label='front-end' style={{margin: '10px'}} />
+          <Chip label='back-end' style={{margin: '10px'}} />
+          <Chip label='design' style={{margin: '10px'}} />
+        </Box>
       </Card>
     </React.Fragment>
   );
 }
 
-function ListOfIdeas() {
+function ListOfIdeas(props) {
   return (
     <React.Fragment>
       <Card style={{width: '345px', marginTop: '10px'}}>
@@ -70,16 +69,46 @@ function ListOfIdeas() {
             expandIcon={<ExpandMoreIcon />}
             aria-controls='panel1a-content'
             id='panel1a-header'>
-            <Typography>List of My Ideas on Talks</Typography>
+            <Typography>{props.title}</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>
-              <p>Venture in Niche Affiliate Marketing</p>
-              <p>Create a Startup that Supports the Gardening Industry</p>
-            </Typography>
+            <List>
+              <_Link title={'Add 1 cup of frozen peas'} badge={4} />{' '}
+              <_Link
+                title={'fun meal to cook together with your guests'}
+                badge={5}
+              />
+            </List>
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </Card>
     </React.Fragment>
+  );
+}
+
+function _Link(props) {
+  return (
+    <ListItem button>
+      <Link
+        to='/'
+        style={{
+          textDecoration: 'none',
+        }}>
+        <ListItemText
+          textAlign='left'
+          style={{
+            // overflow: 'hidden',
+            // whiteSpace: 'nowrap',
+            color: 'grey',
+          }}>
+          {props.title}
+          <Badge
+            color='primary'
+            badgeContent={props.badge}
+            style={{marginLeft: '15px'}}
+          />
+        </ListItemText>
+      </Link>
+    </ListItem>
   );
 }
