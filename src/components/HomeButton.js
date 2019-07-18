@@ -2,6 +2,7 @@ import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import {Link} from 'react-router-dom';
+import './HomeButton.css';
 
 const useStyles = makeStyles(theme => ({
   fab: {
@@ -22,16 +23,16 @@ export default function HomeButton() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <div className='swing'>
       <Link
         className={classes.link}
         to={{
           pathname: `/Timetable`,
         }}>
         <Fab variant='extended' aria-label='Delete' className={classes.fab}>
-          Enter
+          See Timetable
         </Fab>
       </Link>
-    </React.Fragment>
+    </div>
   );
 }
