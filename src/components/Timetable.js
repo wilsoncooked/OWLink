@@ -11,6 +11,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import TabContainer from './TabContainer';
+// Link
+import {Link} from '@react-router-dom';
 
 class Timetable extends Component {
   constructor(props) {
@@ -49,24 +51,26 @@ class Timetable extends Component {
     if (this.state.timetable.length !== 0) {
       day1 = this.state.timetable[0].timeslot.map(slot => (
         <Card style={card}>
-          <CardActionArea style={cardaction}>
-            <CardMedia
-              style={media}
-              image='https://images.unsplash.com/photo-1558445941-3e4f497931b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80'
-              title='Mercedes car'>
-              <CardContent style={flexcontent}>
-                <Typography gutterBottom variant='h6' component='h2'>
-                  {slot.topic} - David Lorenz
-                </Typography>
-                <Typography variant='body2' component='p'>
-                  starts at {slot.starttime} to {slot.endtime}
-                </Typography>
-                <Typography variant='body2' component='p'>
-                  {slot.venue}
-                </Typography>
-              </CardContent>
-            </CardMedia>
-          </CardActionArea>
+          <Link to='/speaker'>
+            <CardActionArea style={cardaction}>
+              <CardMedia
+                style={media}
+                image='https://images.unsplash.com/photo-1558445941-3e4f497931b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80'
+                title='Mercedes car'>
+                <CardContent style={flexcontent}>
+                  <Typography gutterBottom variant='h6' component='h2'>
+                    {slot.topic} - David Lorenz
+                  </Typography>
+                  <Typography variant='body2' component='p'>
+                    starts at {slot.starttime} to {slot.endtime}
+                  </Typography>
+                  <Typography variant='body2' component='p'>
+                    {slot.venue}
+                  </Typography>
+                </CardContent>
+              </CardMedia>
+            </CardActionArea>
+          </Link>
         </Card>
       ));
     }

@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import TimetableOverview from './pages/TimetableOverview';
 import NewIdeaForm from './pages/NewIdeaForm';
+import Speaker from './components/Speaker';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route path='/profile' component={Profile} />
           <Route path='/timetable' component={TimetableOverview} />
+          <Route path='/speaker' component={Speaker} />
           <Route path='/timetable/idea/new' component={NewIdeaForm} />
         </Switch>
       </BrowserRouter>
