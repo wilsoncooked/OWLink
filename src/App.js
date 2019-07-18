@@ -12,8 +12,8 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/profile' component={Profile} />
-          <Route exact path='/timetable' component={TimetableOverview} />
+          <Route exack path='/profile' component={Profile} />
+          <Route path='/timetable' component={TimetableOverview} />
           <Route path='/timetable/idea/new' component={NewIdeaForm} />
         </Switch>
       </BrowserRouter>
