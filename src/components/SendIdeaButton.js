@@ -1,16 +1,6 @@
 import React from 'react';
 
-const catagories = [
-  'fintech',
-  'foodtech',
-  'psychtech',
-  'community',
-  'AI',
-  'environment',
-  'robots',
-];
-
-class SelectButton extends React.Component {
+class SendIdea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,21 +26,11 @@ class SelectButton extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <div className='buttons-wrapper'>
-        {catagories.map((name, index) => {
-          return (
-            <button
-              name={name}
-              key={index}
-              className='category-button'
-              onClick={this.toggleClass}>
-              <b>{name}</b>
-            </button>
-          );
-        })}
-      </div>
+      <button className='submit-button' onClick={this.toggleClass}>
+        <b>Share</b>
+      </button>
     );
   }
 }
 
-export default SelectButton;
+export default SendIdea;

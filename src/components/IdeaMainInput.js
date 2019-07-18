@@ -4,7 +4,6 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    margin: '30px',
     padding: '10px 10px',
     backgroundColor: '#EFEFEF',
   },
@@ -29,7 +28,7 @@ export default function IdeaMainInput() {
   return (
     <div>
       <Paper className={classes.root}>
-        <h5 className={classes.title}>Your idea: </h5>
+        <h4 className={classes.title}>Your idea: </h4>
         <textarea rows={10} type='text' className={classes.input} required />
       </Paper>
     </div>
