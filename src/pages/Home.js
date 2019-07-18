@@ -1,11 +1,11 @@
 import React from 'react';
-import SignIn from '../pages/SignIn';
+import HomeButton from '../components/HomeButton';
 
 class Home extends React.Component {
   render() {
     return (
       <div style={wrapper}>
-        <SignIn />
+        <HomeButton />
       </div>
     );
   }
