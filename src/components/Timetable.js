@@ -73,7 +73,7 @@ class Timetable extends Component {
 
     let day2 = '';
     if (this.state.timetable.length !== 0) {
-      day1 = this.state.timetable[1].timeslot.map(slot => (
+      day2 = this.state.timetable[1].timeslot.map(slot => (
         <Card style={card}>
           <CardActionArea style={cardaction}>
             <CardMedia
@@ -97,7 +97,7 @@ class Timetable extends Component {
       ));
     }
 
-    const direction = 'rtl';
+    const direction = 'ltr';
 
     return (
       <React.Fragment>
@@ -118,11 +118,10 @@ class Timetable extends Component {
             axis={direction === 'rtl' ? 'x-reverse' : 'x'}
             index={this.state.active}
             onChangeIndex={this.handleChangeIndex}>
-            <TabContainer dir={direction}>Day One</TabContainer>
-            <TabContainer dir={direction}>Day Two</TabContainer>
+            <TabContainer dir={direction}>{day1}</TabContainer>
+            <TabContainer dir={direction}>{day2}</TabContainer>
           </SwipeableViews>
         </div>
-        {day1} {day2}
       </React.Fragment>
     );
   }
