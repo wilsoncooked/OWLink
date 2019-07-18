@@ -24,7 +24,7 @@ class Timetable extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.jsonbin.io/b/5d2f4c5450ba093dda160d01')
+    fetch('https://api.jsonbin.io/b/5d1cc16ff467d60d75acb5bd')
       .then(response => response.json())
       .then(data =>
         this.setState({
