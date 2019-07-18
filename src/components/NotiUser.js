@@ -71,23 +71,19 @@ export default class UserInfo extends Component {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                padding: '20px',
               }}>
-              <Fab
-                color='primary'
-                aria-label='Add'
-                style={{margin: '20px', textAlign: 'left'}}>
+              <Fab color='primary' aria-label='Add' onClick={this.handleClick}>
                 <AddIcon />
               </Fab>
               <Snackbar
-                anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
+                anchorOrigin={{vertical: 'top', horizontal: 'center'}}
                 open={this.state.open}
                 onClose={this.handleClose}
                 ContentProps={{
                   'aria-describedby': 'message-id',
                 }}
-                message={
-                  <span id='message-id'>You've sent invitation to {name}</span>
-                }
+                message={<span id='message-id'>I love snacks</span>}
               />
             </Box>
           </Box>
