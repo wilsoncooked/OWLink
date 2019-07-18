@@ -8,9 +8,13 @@ export default function NewIdeaForm() {
   return (
     <div className='new-idea-form'>
       <IdeaMainInput />
-      <IdeaCategory />
-      <IdeaSkills />
-      <SendIdea />
+      <div className='lower-idea-form'>
+        <div>
+          <IdeaCategory />
+          <IdeaSkills />
+        </div>
+        <SendIdea />
+      </div>
     </div>
   );
 }

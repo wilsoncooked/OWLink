@@ -36,7 +36,7 @@ class IdeaCategory extends React.Component {
     console.log(this.state);
     return (
       <div>
-        <h5>Related Categories:</h5>
+        <h4>SKILLS: </h4>
         <div className='buttons-wrapper'>
           {skills.map((name, index) => {
             return (

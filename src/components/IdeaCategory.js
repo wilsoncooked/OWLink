@@ -2,12 +2,17 @@ import React from 'react';
 
 const catagories = [
   'fintech',
+  'automobiles',
   'foodtech',
+  'data visualisation',
   'psychtech',
   'community',
   'AI',
   'environment',
   'robots',
+  'big-data',
+  'non-for-profit',
+  'health',
 ];
 
 class IdeaCategory extends React.Component {
@@ -37,7 +42,7 @@ class IdeaCategory extends React.Component {
     console.log(this.state);
     return (
       <div>
-        <h5>Related Categories:</h5>
+        <h4>CATEGORIES:</h4>
         <div className='buttons-wrapper'>
           {catagories.map((name, index) => {
             return (
