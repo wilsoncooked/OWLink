@@ -1,17 +1,13 @@
 import React from 'react';
 import HomeButton from '../components/HomeButton';
 
-class Home extends React.Component {
-  render() {
-    return (
-      <div style={wrapper}>
-        <HomeButton />
-      </div>
-    );
-  }
+export default function Home() {
+  return (
+    <div style={wrapper}>
+      <HomeButton />
+    </div>
+  );
 }
-
-export default Home;
 
 const wrapper = {
   width: '100',

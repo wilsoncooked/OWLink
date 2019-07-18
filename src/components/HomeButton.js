@@ -29,7 +29,7 @@ export default function HomeButton() {
           pathname: `/Timetable`,
         }}>
         <Fab variant='extended' aria-label='Delete' className={classes.fab}>
-          Login
+          Enter
         </Fab>
       </Link>
     </React.Fragment>
