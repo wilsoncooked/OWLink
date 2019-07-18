@@ -25,3 +25,9 @@
 .dark-color-darker {
   background-color: #14131a;
 }
+
+button {
+  color: white;
+  background-color: #6539ec;
+  padding: 10px;
+}

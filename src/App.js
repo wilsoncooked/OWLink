@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import TimetableOverview from './pages/TimetableOverview';
 import NewIdeaForm from './pages/NewIdeaForm';
+import SignIn from './pages/SignIn';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/profile' component={Profile} />
           <Route path='/timetable' component={TimetableOverview} />
           <Route path='/timetable/idea/new' component={NewIdeaForm} />
+          <Route path='/signin' component={SignIn} />
         </Switch>
       </BrowserRouter>
     </React.Fragment>

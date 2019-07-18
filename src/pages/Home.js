@@ -1,13 +1,17 @@
 import React from 'react';
-import HomeButton from '../components/HomeButton';
+import SignIn from '../pages/SignIn';
 
-export default function Home() {
-  return (
-    <div style={wrapper}>
-      <HomeButton />
-    </div>
-  );
+class Home extends React.Component {
+  render() {
+    return (
+      <div style={wrapper}>
+        <SignIn />
+      </div>
+    );
+  }
 }
+
+export default Home;
 
 const wrapper = {
   width: '100',
