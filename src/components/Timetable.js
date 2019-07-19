@@ -11,6 +11,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import TabContainer from './TabContainer';
+// Link
+import {Link} from 'react-router-dom';
 
 class Timetable extends Component {
   constructor(props) {
@@ -48,18 +50,20 @@ class Timetable extends Component {
     if (this.state.timetable.length !== 0) {
       day1 = this.state.timetable[0].timeslot.map(slot => (
         <Card style={card}>
-          <CardActionArea style={cardaction} className='action-card'>
-            <div style={cardPosition}>
-              <div className={slot.venue} />
-              <div style={boxText}>
-                <h3>{slot.topic}</h3>
-                <p>
-                  {slot.starttime} - {slot.endtime}
-                </p>
-                <p>{slot.venue}</p>
+          <Link to='/speaker' style={link}>
+            <CardActionArea style={cardaction} className='action-card'>
+              <div style={cardPosition}>
+                <div className={slot.venue} />
+                <div style={boxText}>
+                  <h3>{slot.topic}</h3>
+                  <p>
+                    {slot.starttime} - {slot.endtime}
+                  </p>
+                  <p>{slot.venue}</p>
+                </div>
               </div>
-            </div>
-          </CardActionArea>
+            </CardActionArea>
+          </Link>
         </Card>
       ));
     }
@@ -68,18 +72,20 @@ class Timetable extends Component {
     if (this.state.timetable.length !== 0) {
       day2 = this.state.timetable[1].timeslot.map(slot => (
         <Card style={card}>
-          <CardActionArea style={cardaction} className='action-card'>
-            <div style={cardPosition}>
-              <div className={slot.venue} />
-              <div style={boxText}>
-                <h3>{slot.topic}</h3>
-                <p>
-                  {slot.starttime} - {slot.endtime}
-                </p>
-                <p>{slot.venue}</p>
+          <Link to='/speaker' style={link}>
+            <CardActionArea style={cardaction} className='action-card'>
+              <div style={cardPosition}>
+                <div className={slot.venue} />
+                <div style={boxText}>
+                  <h3>{slot.topic}</h3>
+                  <p>
+                    {slot.starttime} - {slot.endtime}
+                  </p>
+                  <p>{slot.venue}</p>
+                </div>
               </div>
-            </div>
-          </CardActionArea>
+            </CardActionArea>
+          </Link>
         </Card>
       ));
     }
@@ -122,16 +128,20 @@ const card = {
 };
 const cardaction = {
   maxWidth: '345px',
+  color: 'black',
 };
-const cardPosition = {
-  display: 'flex',
+const link = {
+  textDecoration: 'none',
 };
 const h1 = {
   color: '#8df3de',
-  margin: '10px 30px 10px 20px ',
+  margin: '10px 30px 10px 30px ',
   fontWeight: '300',
   letterSpacing: '1.2px',
   fontSize: '1.6em',
+};
+const cardPosition = {
+  display: 'flex',
 };
 const boxText = {
   padding: '5px 15px 0px 15px',
