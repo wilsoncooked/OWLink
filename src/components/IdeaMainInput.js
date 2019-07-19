@@ -6,15 +6,15 @@ const useStyles = makeStyles(theme => ({
   root: {
     padding: '10px 10px',
     backgroundColor: '#EEE',
+    margin: '20px 0px',
   },
   title: {
     padding: '0',
     margin: '0',
     color: '#6539ec',
-    fontSize: '1.5em',
+    fontSize: '1.3em',
   },
-  input: {
-    height: '20vh',
+  inputTitle: {
     width: '98%',
     marginTop: '10px',
     color: '#6539ec',
@@ -23,6 +23,20 @@ const useStyles = makeStyles(theme => ({
     outline: 'none',
     fontSize: '1.2em',
     fontWeight: '400',
+  },
+  inputBody: {
+    width: '98%',
+    marginTop: '10px',
+    color: '#6539ec',
+    backgroundColor: '#EFEFEF',
+    border: 'none',
+    outline: 'none',
+    fontSize: '1.2em',
+    fontWeight: '400',
+  },
+  char: {
+    fontSize: '0.6em',
+    color: '#8df3de',
   },
 }));
 
@@ -33,9 +47,20 @@ export default function IdeaMainInput() {
     <div>
       <Paper className={classes.root}>
         <h5 color='primary' className={classes.title}>
+          Your idea name:
+        </h5>
+        <textarea
+          rows={1}
+          type='text'
+          className={classes.inputTitle}
+          required
+        />
+      </Paper>
+      <Paper className={classes.root}>
+        <h5 color='primary' className={classes.title}>
           Whats inspired you?
         </h5>
-        <textarea rows={10} type='text' className={classes.input} required />
+        <textarea rows={4} type='text' className={classes.inputBody} required />
       </Paper>
     </div>
   );

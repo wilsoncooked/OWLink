@@ -12,7 +12,6 @@ const catagories = [
   'robots',
   'big-data',
   'non-for-profit',
-  'health',
 ];
 
 class IdeaCategory extends React.Component {
