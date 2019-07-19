@@ -39,17 +39,17 @@ class Speaker extends Component {
                   image={this.state.speakers[0].image}
                   title='Cat'>
                   <CardContent style={flexcontent}>
-                    <Typography gutterBottom variant='h6' component='h2'>
+                    <Typography gutterBottom variant='h5' component='h2'>
                       {this.state.speakers[0].name}
                     </Typography>
                     <Typography gutterBottom variant='h6' component='h2'>
                       {this.state.speakers[0].role}
                     </Typography>
-                    <Typography variant='body2' component='p'>
+                    <Typography variant='body1' component='p' style={p}>
                       {this.state.speakers[0].topic}
                     </Typography>
-                    <Typography variant='body2' component='p'>
-                      Bio: "{this.state.speakers[0].about}""
+                    <Typography variant='body2' component='p' style={p}>
+                      "{this.state.speakers[0].about}"
                     </Typography>
                   </CardContent>
                 </CardMedia>
@@ -74,10 +74,13 @@ export default Speaker;
 //style
 const card = {
   margin: '10px 30px 10px 30px ',
+  border: '2px solid #8df3de',
+  borderRadius: ' 20px',
 };
 const cardaction = {
-  maxWidth: 345,
+  width: '100%',
   height: '70vh',
+  margin: 0,
 };
 const link = {
   textDecoration: 'none',
@@ -90,6 +93,9 @@ const media = {
 const h1 = {
   color: '#8df3de',
   margin: '10px 30px 10px 30px ',
+  fontWeight: '300',
+  letterSpacing: '1.2px',
+  fontSize: '1.6em',
 };
 const h2 = {
   color: 'white',
@@ -98,7 +104,14 @@ const h2 = {
 const flexcontent = {
   display: 'flex',
   flexDirection: 'column',
-  textAlign: 'center',
   backgroundColor: '#ffffff99',
   height: '100%',
+  padding: '5px 15px 0px 15px',
+  textTransform: 'capitalize',
+  letterSpacing: '1.2px',
+  width: '280px',
+  textAlign: 'left',
+};
+const p = {
+  marginTop: 10,
 };

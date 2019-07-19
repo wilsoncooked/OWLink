@@ -42,7 +42,6 @@ class Timetable extends Component {
     });
   }
   handleChangeIndex(index) {
-    //this.setState(index);
     console.log('index', index.target.value);
   }
 
@@ -52,23 +51,17 @@ class Timetable extends Component {
       day1 = this.state.timetable[0].timeslot.map(slot => (
         <Card style={card}>
           <Link to='/speaker' style={link}>
-            <CardActionArea style={cardaction}>
-              <CardMedia
-                style={media}
-                image='https://images.unsplash.com/photo-1558445941-3e4f497931b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80'
-                title='Mercedes car'>
-                <CardContent style={flexcontent}>
-                  <Typography gutterBottom variant='h6' component='h2'>
-                    {slot.topic} - David Lorenz
-                  </Typography>
-                  <Typography variant='body2' component='p'>
-                    starts at {slot.starttime} to {slot.endtime}
-                  </Typography>
-                  <Typography variant='body2' component='p'>
-                    {slot.venue}
-                  </Typography>
-                </CardContent>
-              </CardMedia>
+            <CardActionArea style={cardaction} className='action-card'>
+              <div style={cardPosition}>
+                <div className={slot.venue} />
+                <div style={boxText}>
+                  <h3>{slot.topic}</h3>
+                  <p>
+                    {slot.starttime} - {slot.endtime}
+                  </p>
+                  <p>{slot.venue}</p>
+                </div>
+              </div>
             </CardActionArea>
           </Link>
         </Card>
@@ -80,23 +73,17 @@ class Timetable extends Component {
       day2 = this.state.timetable[1].timeslot.map(slot => (
         <Card style={card}>
           <Link to='/speaker' style={link}>
-            <CardActionArea style={cardaction}>
-              <CardMedia
-                style={media}
-                image='https://images.unsplash.com/photo-1558445941-3e4f497931b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80'
-                title='Mercedes car'>
-                <CardContent style={flexcontent}>
-                  <Typography gutterBottom variant='h6' component='h2'>
-                    {slot.topic} - David Lorenz
-                  </Typography>
-                  <Typography variant='body2' component='p'>
-                    starts at {slot.starttime} to {slot.endtime}
-                  </Typography>
-                  <Typography variant='body2' component='p'>
-                    {slot.venue}
-                  </Typography>
-                </CardContent>
-              </CardMedia>
+            <CardActionArea style={cardaction} className='action-card'>
+              <div style={cardPosition}>
+                <div className={slot.venue} />
+                <div style={boxText}>
+                  <h3>{slot.topic}</h3>
+                  <p>
+                    {slot.starttime} - {slot.endtime}
+                  </p>
+                  <p>{slot.venue}</p>
+                </div>
+              </div>
             </CardActionArea>
           </Link>
         </Card>
@@ -107,7 +94,7 @@ class Timetable extends Component {
 
     return (
       <React.Fragment>
-        <h1 style={h1}>Timetable</h1>
+        <h1 style={h1}>Timetable </h1>
         <div>
           <AppBar position='static' color='default'>
             <Tabs
@@ -137,26 +124,29 @@ export default Timetable;
 
 //style
 const card = {
-  margin: '10px 30px 10px 30px ',
+  margin: '-15px -15px 22px -15px',
 };
 const cardaction = {
-  maxWidth: 345,
+  maxWidth: '345px',
+  color: 'black',
 };
 const link = {
   textDecoration: 'none',
 };
-const media = {
-  height: 140,
-  filter: 'grayscale(100%)',
-};
 const h1 = {
   color: '#8df3de',
   margin: '10px 30px 10px 30px ',
+  fontWeight: '300',
+  letterSpacing: '1.2px',
+  fontSize: '1.6em',
 };
-const flexcontent = {
+const cardPosition = {
   display: 'flex',
-  flexDirection: 'column',
-  textAlign: 'center',
-  backgroundColor: '#ffffff99',
-  height: '100%',
+};
+const boxText = {
+  padding: '5px 15px 0px 15px',
+  textTransform: 'capitalize',
+  letterSpacing: '1.2px',
+  width: '280px',
+  textAlign: 'left',
 };
