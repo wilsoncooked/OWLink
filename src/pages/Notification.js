@@ -28,9 +28,38 @@ export default class Notification extends Component {
 }
 
 const animateList = [
-  <NotiUser name={'user1'} message={'software engineer in Berlin'} />,
-  <NotiUser name={'user2'} message={'software engineer in Berlin'} />,
-  <NotiUser name={'user3'} message={'software engineer in Berlin'} />,
-  <NotiUser name={'user4'} message={'software engineer in Berlin'} />,
-  <NotiUser name={'user5'} message={'software engineer in Berlin'} />,
+  <NotiUser
+    name={'Mark Erikson'}
+    message={'I like your idea! can I join?'}
+    role={'Software Engineer @ Northrop Grumman Corporation'}
+    photo={
+      'https://upload.wikimedia.org/wikipedia/commons/6/66/An_up-close_picture_of_a_curious_male_domestic_shorthair_tabby_cat.jpg'
+    }
+  />,
+  <NotiUser
+    name={'Netta Bondy'}
+    message={'cool idea!'}
+    role={'Web Developer @ Reali'}
+    photo={
+      'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80'
+    }
+  />,
+  <NotiUser
+    name={'David Lorenz'}
+    message={'Hi, I am frontend dev at MB.io'}
+    role={'Frontend Developer @ MB.io'}
+    photo={'https://peopledotcom.files.wordpress.com/2018/02/two-tone-cat.jpg'}
+  />,
+  <NotiUser
+    name={'Hannes Struß'}
+    message={'Driving Digital Future. Now'}
+    role={'Leadlink Mobile App Engineering @ MB.io'}
+    photo={'https://d17fnq9dkz9hgj.cloudfront.net/uploads/2011/01/cat-apps.jpg'}
+  />,
+  <NotiUser
+    name={'Alexandre Vaz'}
+    message={'How can disruptive change affect the automotive industry?'}
+    role={'Leadlink Development Circle @ MB.io'}
+    photo={'https://ak8.picdn.net/shutterstock/videos/4822508/thumb/1.jpg'}
+  />,
 ];
