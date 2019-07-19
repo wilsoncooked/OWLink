@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 // Link
 import {Link} from 'react-router-dom';
@@ -34,25 +33,30 @@ class Speaker extends Component {
           <Card style={card}>
             <Link to='/timetable' style={link}>
               <CardActionArea style={cardaction}>
-                <CardMedia
-                  style={media}
-                  image={this.state.speakers[0].image}
-                  title='Cat'>
-                  <CardContent style={flexcontent}>
-                    <Typography gutterBottom variant='h5' component='h2'>
-                      {this.state.speakers[0].name}
-                    </Typography>
-                    <Typography gutterBottom variant='h6' component='h2'>
-                      {this.state.speakers[0].role}
-                    </Typography>
-                    <Typography variant='body1' component='p' style={p}>
-                      {this.state.speakers[0].topic}
-                    </Typography>
-                    <Typography variant='body2' component='p' style={p}>
-                      "{this.state.speakers[0].about}"
-                    </Typography>
-                  </CardContent>
-                </CardMedia>
+                <CardContent
+                  style={flexcontent}
+                  className='action-card-speaker'>
+                  <Typography
+                    gutterBottom
+                    variant='h5'
+                    component='h2'
+                    style={h5}>
+                    {this.state.speakers[0].name}
+                  </Typography>
+                  <Typography
+                    gutterBottom
+                    variant='h6'
+                    component='h2'
+                    style={h6}>
+                    {this.state.speakers[0].role}
+                  </Typography>
+                  <Typography variant='body1' component='p' style={p}>
+                    {this.state.speakers[0].topic}
+                  </Typography>
+                  <Typography variant='body2' component='p' style={p}>
+                    "{this.state.speakers[0].about}"
+                  </Typography>
+                </CardContent>
               </CardActionArea>
             </Link>
           </Card>
@@ -79,16 +83,11 @@ const card = {
 };
 const cardaction = {
   width: '100%',
-  height: '70vh',
+  height: '60vh',
   margin: 0,
 };
 const link = {
   textDecoration: 'none',
-};
-const media = {
-  filter: 'grayscale(100%)',
-  height: '100%',
-  width: '100%,',
 };
 const h1 = {
   color: '#8df3de',
@@ -104,7 +103,6 @@ const h2 = {
 const flexcontent = {
   display: 'flex',
   flexDirection: 'column',
-  backgroundColor: '#ffffff99',
   height: '100%',
   padding: '5px 15px 0px 15px',
   textTransform: 'capitalize',
@@ -114,4 +112,12 @@ const flexcontent = {
 };
 const p = {
   marginTop: 10,
+  color: 'black',
+};
+const h5 = {
+  color: '#6539ec',
+  marginTop: 10,
+};
+const h6 = {
+  color: 'black',
 };

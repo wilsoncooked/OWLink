@@ -3,11 +3,14 @@ import Fade from 'react-reveal/Fade';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import NotiUser from '../components/NotiUser';
+import Navigation from '../components/Navigation';
 
 export default class Notification extends Component {
   render() {
     return (
       <React.Fragment>
+        <h1 style={h1}>Match Maker</h1>
+        <Navigation />
         <Grid container justify='center' alignItems='center'>
           {animateList.map((item, key) => (
             <Box
@@ -63,3 +66,11 @@ const animateList = [
     photo={'https://ak8.picdn.net/shutterstock/videos/4822508/thumb/1.jpg'}
   />,
 ];
+
+const h1 = {
+  color: '#8df3de',
+  margin: '10px 30px 0px 15px ',
+  fontWeight: '300',
+  letterSpacing: '1.2px',
+  fontSize: '1.6em',
+};

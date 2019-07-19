@@ -2,18 +2,6 @@
   animation: jittery 2s infinite;
   text-decoration: 'none';
 }
-/* 
-.swing:hover {
-  background-color: #6539ec;
-  color: white;
-  text-align: center;
-  min-width: 170px;
-  min-height: 60px;
-  font-size: 1.5em;
-  border: 2px solid #8df3de;
-  border-radius: 20px;
-  text-decoration: none;
-} */
 
 @keyframes jittery {
   5%,

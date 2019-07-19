@@ -25,11 +25,6 @@ const useStyles = makeStyles({
     right: '1px',
     top: '1px',
   },
-  li: {
-    padding: '13px 0px',
-    fontSize: '2.2em',
-    textAlign: 'center',
-  },
   link: {
     textDecoration: 'none',
     color: '#8df3de',
@@ -94,7 +89,7 @@ export default function Navigation() {
         <Link
           className={classes.link}
           to={{
-            pathname: `/speakers`,
+            pathname: `/timetable/details`,
           }}>
           <li className={classes.li}>Speakers</li>
         </Link>
@@ -108,7 +103,7 @@ export default function Navigation() {
         <Link
           className={classes.link}
           to={{
-            pathname: `/profile`,
+            pathname: `/notification`,
           }}>
           <li className={classes.li}>Match Maker</li>
         </Link>
