@@ -28,12 +28,13 @@ export default class UserInfo extends Component {
   }
 
   render() {
-    const {name, message} = this.props;
+    const {name, role, photo, message} = this.props;
     return (
       <React.Fragment>
         <Card style={{width: '345px', marginTop: '30px', marginBottom: '10px'}}>
           <CardContent>
             <Avatar
+              src={photo}
               style={{
                 margin: '0 auto',
                 width: '150px',
@@ -47,21 +48,21 @@ export default class UserInfo extends Component {
               variant='body2'
               color='textSecondary'
               component='p'>
-              {message}
+              {role}
             </Typography>
           </CardContent>
-          <Box>
+          {/* <Box>
             <Chip label='front-end' style={{margin: '10px'}} />
             <Chip label='back-end' style={{margin: '10px'}} />
             <Chip label='design' style={{margin: '10px'}} />
-          </Box>
+          </Box> */}
           <Box style={{backgroundColor: '#8df3de', padding: '15px'}}>
             <Typography
               style={{textAlign: 'center'}}
               variant='body2'
               color='textPrimary'
               component='p'>
-              Hi! I'd like to join your project :)
+              {message}
             </Typography>
             <Box
               style={{
@@ -71,7 +72,7 @@ export default class UserInfo extends Component {
                 padding: '20px',
               }}>
               <Fab color='primary' aria-label='Add' onClick={this.handleClick}>
-                <AddIcon />
+                <AddIcon color='secondary' />
               </Fab>
               <Snackbar
                 anchorOrigin={{vertical: 'top', horizontal: 'center'}}
