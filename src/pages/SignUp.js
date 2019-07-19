@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import firebase from 'firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import Profile from './Profile';
+import Fab from '@material-ui/core/Fab';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 
 firebase.initializeApp({
   apiKey: 'AIzaSyDSuDBGWwDlpPSu5KyHqhya5Iziyi2pFqE',
@@ -33,15 +37,25 @@ class SignUp extends Component {
     return (
       <div>
         {this.state.isSignedIn ? (
-          <span>
-            <div>Signed In!</div>
-            <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
-            <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
-            <img
-              alt='profile picture'
-              src={firebase.auth().currentUser.photoURL}
-            />
-          </span>
+          <React.Fragment>
+            <Grid container justify='center' alignItems='center'>
+              <Box display='flex' flexDirection='column'>
+                <Fab
+                  onClick={() => firebase.auth().signOut()}
+                  variant='extended'
+                  aria-label='logout'
+                  color='secondary'
+                  size='small'
+                  style={{margin: '20px'}}>
+                  Log out
+                </Fab>
+              </Box>
+              <Profile
+                name={firebase.auth().currentUser.displayName}
+                photo={firebase.auth().currentUser.photoURL}
+              />
+            </Grid>
+          </React.Fragment>
         ) : (
           <StyledFirebaseAuth
             uiConfig={this.uiConfig}
