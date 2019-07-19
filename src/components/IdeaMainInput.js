@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     padding: '0',
     margin: '0',
     color: '#6539ec',
-    fontSize: '1.5em',
+    fontSize: '1.3em',
   },
   inputTitle: {
     width: '98%',
@@ -47,10 +47,10 @@ export default function IdeaMainInput() {
     <div>
       <Paper className={classes.root}>
         <h5 color='primary' className={classes.title}>
-          Whats inspired you? <span className={classes.char}> (100char)</span>
+          Your idea name:
         </h5>
         <textarea
-          rows={2}
+          rows={1}
           type='text'
           className={classes.inputTitle}
           required
@@ -58,9 +58,9 @@ export default function IdeaMainInput() {
       </Paper>
       <Paper className={classes.root}>
         <h5 color='primary' className={classes.title}>
-          Have more details?
+          Whats inspired you?
         </h5>
-        <textarea rows={8} type='text' className={classes.inputBody} required />
+        <textarea rows={4} type='text' className={classes.inputBody} required />
       </Paper>
     </div>
   );

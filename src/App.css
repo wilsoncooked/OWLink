@@ -64,7 +64,7 @@
 }
 
 .lower-idea-form {
-  height: 70vh;
+  height: 67vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -104,4 +104,28 @@ button:focus {
 
 input:focus {
   outline: none;
+}
+
+/* .MuiPaper-elevation1 {
+  padding: 0 !important;
+} */
+
+.Bertha {
+  background-color: #8df3de;
+  width: 50px;
+  height: 120px;
+  /* box-shadow: 5px 0px 10px #d3d3d3; */
+}
+
+.Carl {
+  background-color: #6539ec;
+  width: 50px;
+  height: 120px;
+  /* box-shadow: 5px 5px 10px #d1d1d1; */
+}
+
+.action-card {
+  background-size: cover;
+  filter: gray;
+  background-image: url('./img/car.jpg');
 }
