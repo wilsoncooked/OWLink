@@ -1,5 +1,20 @@
 import React from 'react';
+import IdeaMainInput from '../components/IdeaMainInput';
+import IdeaCategory from '../components/IdeaCategory';
+import IdeaSkills from '../components/IdeaSkills';
+import SendIdea from '../components/SendIdeaButton';
 
 export default function NewIdeaForm() {
-  return <React.Fragment />;
+  return (
+    <div className='new-idea-form'>
+      <IdeaMainInput />
+      <div className='lower-idea-form'>
+        <div>
+          <IdeaCategory />
+          <IdeaSkills />
+        </div>
+        <SendIdea />
+      </div>
+    </div>
+  );
 }
