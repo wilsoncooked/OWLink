@@ -53,7 +53,6 @@ class IdeasList extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div style={root}>
         {ideas.map((idea, i) => {
@@ -69,11 +68,9 @@ class IdeasList extends React.Component {
                 <div style={ideaDetails}>
                   <p style={ideaText}>{idea.description}</p>
                   <div style={iconRow}>
-                    {this.state.liked === true ? (
-                      <Liked onClick={this.handleClick} />
-                    ) : (
-                      <Unliked onClick={this.handleClick} />
-                    )}
+                    <div onClick={this.handleClick}>
+                      {this.state.liked === true ? <Liked /> : <Unliked />}
+                    </div>
                     <AddButton className={addButton} />
                   </div>
                 </div>
