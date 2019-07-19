@@ -9,6 +9,7 @@ import AddButton from './AddButton';
 import Unliked from './UnlikedButton';
 import './HomeButton.css';
 import {Link} from 'react-router-dom';
+import Snackbar from '@material-ui/core/Snackbar';
 
 const ideas = [
   {
@@ -43,8 +44,11 @@ class IdeasList extends React.Component {
     super(props);
     this.state = {
       liked: false,
+      open: false,
     };
     this.handleClick = this.handleClick.bind(this);
+    this.snackClick = this.snackClick.bind(this);
+    this.snackClose = this.snackClose.bind(this);
   }
 
   handleClick(event) {
@@ -52,6 +56,13 @@ class IdeasList extends React.Component {
     this.setState({
       liked: !this.state.liked,
     });
+  }
+  snackClick() {
+    this.setState({open: true});
+  }
+
+  snackClose() {
+    this.setState({open: false});
   }
 
   render() {
@@ -86,8 +97,23 @@ class IdeasList extends React.Component {
                       <div onClick={this.handleClick}>
                         {this.state.liked === true ? <Liked /> : <Unliked />}
                       </div>
-                      <AddButton className={addButton} />
+                      <div onClick={this.snackClick}>
+                        <AddButton className={addButton} />
+                      </div>
                     </div>
+                    <Snackbar
+                      anchorOrigin={{vertical: 'top', horizontal: 'center'}}
+                      open={this.state.open}
+                      onClose={this.snackClose}
+                      ContentProps={{
+                        'aria-describedby': 'message-id',
+                      }}
+                      message={
+                        <span id='message-id'>
+                          You've sent request to join this idea!
+                        </span>
+                      }
+                    />
                   </div>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
