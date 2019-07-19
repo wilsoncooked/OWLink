@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Like() {
+export default function Liked() {
   const classes = useStyles();
 
   return (

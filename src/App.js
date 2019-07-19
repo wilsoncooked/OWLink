@@ -7,6 +7,7 @@ import Notification from './pages/Notification';
 import TimetableOverview from './pages/TimetableOverview';
 import NewIdeaForm from './pages/NewIdeaForm';
 import SignUp from './pages/SignUp';
+import TalkDetails from './pages/TalkDetails';
 
 function App() {
   return (
@@ -16,12 +17,13 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exack path='/profile' component={Profile} />
           <Route exact path='/timetable' component={TimetableOverview} />
-          <Route path='/timetable/idea/new' component={NewIdeaForm} />
-          <Route path='/timetable/idea' component={TalkDetails} />
+          <Route path='/timetable/details/new' component={NewIdeaForm} />
+          <Route path='/timetable/details' component={TalkDetails} />
           <Route path='/notification' component={Notification} />
           <Route path='/signup' component={SignUp} />
         </Switch>
       </BrowserRouter>
+    </React.Fragment>
   );
 }
 
