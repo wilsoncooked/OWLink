@@ -8,31 +8,65 @@ import Typography from '@material-ui/core/Typography';
 // Link
 import {Link} from 'react-router-dom';
 
-function Speaker() {
-  return (
-    <Card style={card}>
-      <Link to='/timetable'>
-        <CardActionArea style={cardaction}>
-          <CardMedia
-            style={media}
-            image='https://images.unsplash.com/photo-1505481354248-2ba5d3b9338e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80'
-            title='Cat'>
-            <CardContent style={flexcontent}>
-              <Typography gutterBottom variant='h6' component='h2'>
-                David Lorenz
-              </Typography>
-              <Typography variant='body2' component='p'>
-                Frontend Developer
-              </Typography>
-              <Typography variant='body2' component='p'>
-                bioooooooo
-              </Typography>
-            </CardContent>
-          </CardMedia>
-        </CardActionArea>
-      </Link>
-    </Card>
-  );
+class Speaker extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      speakers: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('https://api.jsonbin.io/b/5d1cc16ff467d60d75acb5bd')
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          speakers: data.speakers,
+        }),
+      );
+  }
+
+  render() {
+    if (this.state.speakers.length !== 0) {
+      return (
+        <React.Fragment>
+          <h1 style={h1}>Speaker</h1>
+          <Card style={card}>
+            <Link to='/timetable' style={link}>
+              <CardActionArea style={cardaction}>
+                <CardMedia
+                  style={media}
+                  image={this.state.speakers[0].image}
+                  title='Cat'>
+                  <CardContent style={flexcontent}>
+                    <Typography gutterBottom variant='h6' component='h2'>
+                      {this.state.speakers[0].name}
+                    </Typography>
+                    <Typography gutterBottom variant='h6' component='h2'>
+                      {this.state.speakers[0].role}
+                    </Typography>
+                    <Typography variant='body2' component='p'>
+                      {this.state.speakers[0].topic}
+                    </Typography>
+                    <Typography variant='body2' component='p'>
+                      Bio: "{this.state.speakers[0].about}""
+                    </Typography>
+                  </CardContent>
+                </CardMedia>
+              </CardActionArea>
+            </Link>
+          </Card>
+        </React.Fragment>
+      );
+    } else {
+      return (
+        <React.Fragment>
+          <h1 style={h1}>Speaker</h1>
+          <h2 style={h2}>...loading</h2>
+        </React.Fragment>
+      );
+    }
+  }
 }
 
 export default Speaker;
@@ -43,10 +77,15 @@ const card = {
 };
 const cardaction = {
   maxWidth: 345,
+  height: '70vh',
+};
+const link = {
+  textDecoration: 'none',
 };
 const media = {
-  height: 140,
   filter: 'grayscale(100%)',
+  height: '100%',
+  width: '100%,',
 };
 const h1 = {
   color: '#8df3de',
