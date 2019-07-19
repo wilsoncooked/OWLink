@@ -3,6 +3,11 @@
   text-decoration: 'none';
 }
 
+.swing-position {
+  position: fixed;
+  bottom: 70px;
+}
+
 @keyframes jittery {
   5%,
   50% {

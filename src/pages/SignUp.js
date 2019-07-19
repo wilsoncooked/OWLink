@@ -47,7 +47,8 @@ class SignUp extends Component {
                   aria-label='logout'
                   color='secondary'
                   size='small'
-                  style={{margin: '20px'}}>
+                  style={{margin: '20px', height: '40px', width: '100px'}}
+                  p>
                   Log out
                 </Fab>
               </Box>

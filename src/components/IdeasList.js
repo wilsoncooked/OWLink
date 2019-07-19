@@ -169,7 +169,7 @@ const ideaText = {
 };
 const addButton = {margin: '300px'};
 const addButton2 = {
-  margin: '300px',
+  // margin: '300px',
 };
 const h1 = {
   color: '#8df3de',
