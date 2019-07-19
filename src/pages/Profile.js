@@ -16,12 +16,12 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Badge from '@material-ui/core/Badge';
 
-export default function Profile() {
+export default function Profile(props) {
   return (
     <React.Fragment>
       <Grid container justify='center' alignItems='center'>
         <Box display='flex' flexDirection='column'>
-          <UserInfo />
+          <UserInfo name={props.name} photo={props.photo} />
           <ListOfIdeas title={'Idea List'} />
           <ListOfIdeas title={'Join List'} />
         </Box>
@@ -30,12 +30,13 @@ export default function Profile() {
   );
 }
 
-function UserInfo() {
+function UserInfo(props) {
   return (
     <React.Fragment>
       <Card style={{width: '345px', marginTop: '30px', marginBottom: '10px'}}>
         <CardContent>
           <Avatar
+            src={props.photo}
             style={{
               margin: '0 auto',
               width: '60px',
@@ -43,7 +44,7 @@ function UserInfo() {
             }}>
             R
           </Avatar>
-          <p style={{textAlign: 'center'}}>name</p>
+          <p style={{textAlign: 'center'}}>{props.name}</p>
           <Typography variant='body2' color='textSecondary' component='p'>
             This impressive paella is a perfect party dish and a fun meal to
             cook together with your guests. Add 1 cup of frozen peas along with
