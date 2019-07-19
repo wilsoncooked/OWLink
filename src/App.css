@@ -122,3 +122,7 @@ input:focus {
   filter: gray;
   background-image: url('./img/car.jpg');
 }
+
+ul li {
+  list-style-type: none;
+}

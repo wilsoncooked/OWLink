@@ -15,6 +15,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Badge from '@material-ui/core/Badge';
+import Navigation from '../components/Navigation';
 
 export default function Profile(props) {
   return (
@@ -33,7 +34,8 @@ export default function Profile(props) {
 function UserInfo(props) {
   return (
     <React.Fragment>
-      <Card style={{width: '345px', marginTop: '30px', marginBottom: '10px'}}>
+      <Navigation />
+      <Card style={{width: '345px', marginTop: '60px', marginBottom: '10px'}}>
         <CardContent>
           <Avatar
             src={props.photo}

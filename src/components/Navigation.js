@@ -2,24 +2,28 @@ import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
 import Menu from '@material-ui/icons/Menu';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles({
-  list: {
-    width: 250,
-  },
   fullList: {
-    width: 'auto',
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: '#6539ec',
+    padding: '30px',
   },
   hamburger: {
-    width: 40,
-    height: 40,
+    width: 39,
+    height: 39,
   },
   navButton: {
     position: 'fixed',
-    right: '3px',
-    top: '3px',
+    right: '1px',
+    top: '1px',
+  },
+  li: {
+    padding: '20px 0px',
+    fontSize: '2em',
   },
 });
 
@@ -39,24 +43,49 @@ export default function Navigation() {
 
     setState({...state, [side]: open});
   };
-
-  const sideList = side => (
-    <div
-      className={classes.list}
-      role='presentation'
-      onClick={toggleDrawer(side, false)}
-      onKeyDown={toggleDrawer(side, false)}>
-      <List />
-    </div>
-  );
-
   const fullList = side => (
     <div
       className={classes.fullList}
       role='presentation'
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}>
-      <List />
+      <ul>
+        <Link
+          className={classes.link}
+          to={{
+            pathname: `/`,
+          }}>
+          <li className={classes.li}>Home</li>
+        </Link>
+        <Link
+          className={classes.link}
+          to={{
+            pathname: `/timetable`,
+          }}>
+          <li className={classes.li}>Timetable</li>
+        </Link>
+        <Link
+          className={classes.link}
+          to={{
+            pathname: `/speakers`,
+          }}>
+          <li className={classes.li}>Speakers</li>
+        </Link>
+        <Link
+          className={classes.link}
+          to={{
+            pathname: `/profile`,
+          }}>
+          <li className={classes.li}>Profile</li>
+        </Link>
+        <Link
+          className={classes.link}
+          to={{
+            pathname: `/profile`,
+          }}>
+          <li className={classes.li}>Match Maker</li>
+        </Link>
+      </ul>
     </div>
   );
 
