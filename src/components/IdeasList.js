@@ -7,6 +7,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Liked from './LikedButton';
 import AddButton from './AddButton';
 import Unliked from './UnlikedButton';
+import './HomeButton.css';
 
 const ideas = [
   {
@@ -54,31 +55,43 @@ class IdeasList extends React.Component {
 
   render() {
     return (
-      <div style={root}>
-        {ideas.map((idea, i) => {
-          return (
-            <ExpansionPanel style={panel}>
-              <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls='panel1a-content'
-                id={`panel${i}-header`}>
-                <Typography style={heading}>{idea.name}</Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails style={detailsExpansion}>
-                <div style={ideaDetails}>
-                  <p style={ideaText}>{idea.description}</p>
-                  <div style={iconRow}>
-                    <div onClick={this.handleClick}>
-                      {this.state.liked === true ? <Liked /> : <Unliked />}
+      <React.Fragment>
+        <section style={iconRow2}>
+          <div style={column}>
+            <h1 style={h2}>Get inspired? </h1>
+            <p style={h3}>Share your idea </p>
+          </div>
+          <div className='swing'>
+            <AddButton className={addButton2} />
+          </div>
+        </section>
+        <h1 style={h1}>Ideas he/she inspired </h1>
+        <div style={root}>
+          {ideas.map((idea, i) => {
+            return (
+              <ExpansionPanel style={panel}>
+                <ExpansionPanelSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls='panel1a-content'
+                  id={`panel${i}-header`}>
+                  <Typography style={heading}>{idea.name}</Typography>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails style={detailsExpansion}>
+                  <div style={ideaDetails}>
+                    <p style={ideaText}>{idea.description}</p>
+                    <div style={iconRow}>
+                      <div onClick={this.handleClick}>
+                        {this.state.liked === true ? <Liked /> : <Unliked />}
+                      </div>
+                      <AddButton className={addButton} />
                     </div>
-                    <AddButton className={addButton} />
                   </div>
-                </div>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
-          );
-        })}
-      </div>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+            );
+          })}
+        </div>
+      </React.Fragment>
     );
   }
 }
@@ -86,8 +99,9 @@ class IdeasList extends React.Component {
 export default IdeasList;
 
 const root = {
-  width: '100%',
+  width: '90%',
   padding: '0 !important',
+  marginLeft: '20px',
 };
 const heading = {
   color: '#6539ec',
@@ -106,6 +120,15 @@ const iconRow = {
   alignItems: 'center',
   width: '95%',
 };
+const iconRow2 = {
+  display: 'flex',
+  width: '95%',
+  alignItems: 'center',
+};
+const column = {
+  display: 'flex',
+  flexDirection: 'column',
+};
 const ideaDetails = {
   width: '335px',
   textAlign: 'justify',
@@ -116,3 +139,29 @@ const ideaText = {
   borderRadius: '10px',
 };
 const addButton = {margin: '300px'};
+const addButton2 = {
+  margin: '300px',
+};
+const h1 = {
+  color: '#8df3de',
+  margin: '10px 30px 10px 30px ',
+  fontWeight: '300',
+  letterSpacing: '1.2px',
+  fontSize: '1.6em',
+  marginTop: 20,
+};
+const h2 = {
+  color: '#8df3de',
+  margin: '0px 20px 0px 30px ',
+  fontWeight: '300',
+  letterSpacing: '1.2px',
+  fontSize: '1.6em',
+  marginTop: 20,
+};
+const h3 = {
+  color: '#8df3de',
+  margin: '0px 0px 0px 30px ',
+  fontWeight: '300',
+  letterSpacing: '1.2px',
+  fontSize: '1em',
+};
