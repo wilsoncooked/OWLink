@@ -22,8 +22,8 @@ export default function Profile() {
       <Grid container justify='center' alignItems='center'>
         <Box display='flex' flexDirection='column'>
           <UserInfo />
-          <ListOfIdeas title={'Idea List'} />
-          <ListOfIdeas title={'Join List'} />
+          <IdeaList title={'Idea List'} />
+          <JoinList title={'Join List'} />
         </Box>
       </Grid>
     </React.Fragment>
@@ -60,7 +60,7 @@ function UserInfo() {
   );
 }
 
-function ListOfIdeas(props) {
+function IdeaList(props) {
   return (
     <React.Fragment>
       <Card style={{width: '345px', marginTop: '10px'}}>
@@ -78,6 +78,29 @@ function ListOfIdeas(props) {
                 title={'fun meal to cook together with your guests'}
                 badge={5}
               />
+            </List>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+      </Card>
+    </React.Fragment>
+  );
+}
+
+function JoinList(props) {
+  return (
+    <React.Fragment>
+      <Card style={{width: '345px', marginTop: '10px'}}>
+        <ExpansionPanel>
+          <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls='panel1a-content'
+            id='panel1a-header'>
+            <Typography>{props.title}</Typography>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <List>
+              <_Link title={'You can add web fonts and meta tags'} />{' '}
+              <_Link title={'fun meal to cook together with your guests'} />
             </List>
           </ExpansionPanelDetails>
         </ExpansionPanel>
