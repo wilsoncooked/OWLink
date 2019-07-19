@@ -11,10 +11,11 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     minWidth: '170px',
     minHeight: '60px',
-    fontSize: '1.5em',
+    fontSize: '1em',
     border: '2px solid #8df3de',
-    borderRadius: ' 20px',
+    borderRadius: ' 40px',
     textDecoration: 'none',
+    fontWeight: '400',
   },
   link: {
     textDecoration: 'none',

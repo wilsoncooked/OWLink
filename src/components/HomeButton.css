@@ -1,6 +1,8 @@
 .swing {
   animation: jittery 2s infinite;
   text-decoration: 'none';
+  position: fixed;
+  bottom: 70px;
 }
 
 @keyframes jittery {

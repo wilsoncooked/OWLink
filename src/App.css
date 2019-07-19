@@ -3,7 +3,7 @@
 }
 
 .purple-background {
-  background-color: #6539ec;
+  background-color: rgb(101, 57, 236);
 }
 
 .green-text {
@@ -184,4 +184,54 @@ li:hover:after {
 .action-card-speaker {
   background-size: cover;
   background-image: url('https://i.imgur.com/ljSpDFm.jpg');
+}
+
+.main-header {
+  color: #8df3de;
+  font-size: 2rem;
+  animation: bounceIn 0.3s;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  80% {
+    opacity: 0.9;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.home-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30;
+}
+
+.background-image {
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  opacity: 0.4;
+}
+.auth {
+  position: fixed;
+  top: 40px;
+}
+
+.homelogo {
+  width: 300px;
+  margin-bottom: 0px;
 }
