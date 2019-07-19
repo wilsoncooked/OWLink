@@ -18,11 +18,12 @@ import Badge from '@material-ui/core/Badge';
 import Navigation from '../components/Navigation';
 
 export default function Profile(props) {
+  let user = JSON.parse(localStorage.getItem('user'));
   return (
     <React.Fragment>
       <Grid container justify='center' alignItems='center'>
         <Box display='flex' flexDirection='column'>
-          <UserInfo name={props.name} photo={props.photo} />
+          <UserInfo name={user.displayName} photo={user.photoURL} />
           <IdeaList title={'people who wants to join your idea'} />
           <JoinList title={'ideas you joined'} />
         </Box>
