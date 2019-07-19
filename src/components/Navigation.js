@@ -4,13 +4,17 @@ import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/icons/Menu';
 import {Link} from 'react-router-dom';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles({
   fullList: {
     width: '100vw',
     height: '100vh',
     backgroundColor: '#6539ec',
-    padding: '30px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   hamburger: {
     width: 39,
@@ -22,9 +26,23 @@ const useStyles = makeStyles({
     top: '1px',
   },
   li: {
-    padding: '20px 0px',
-    fontSize: '2em',
+    padding: '13px 0px',
+    fontSize: '2.2em',
+    textAlign: 'center',
   },
+  link: {
+    textDecoration: 'none',
+    color: '#8df3de',
+  },
+  ul: {
+    width: '55vw',
+    marginRight: '20px',
+  },
+  logo: {
+    width: '300px',
+    paddingBottom: '20px',
+  },
+  hr: {},
 });
 
 export default function Navigation() {
@@ -49,7 +67,13 @@ export default function Navigation() {
       role='presentation'
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}>
-      <ul>
+      <img
+        className={classes.logo}
+        src='https://i.imgur.com/lFEgcaf.png'
+        alt='owl conference logo'
+      />
+      <Divider />
+      <ul className={classes.ul}>
         <Link
           className={classes.link}
           to={{
@@ -57,13 +81,16 @@ export default function Navigation() {
           }}>
           <li className={classes.li}>Home</li>
         </Link>
-        <Link
-          className={classes.link}
-          to={{
-            pathname: `/timetable`,
-          }}>
-          <li className={classes.li}>Timetable</li>
-        </Link>
+
+        <li className={classes.li}>
+          <Link
+            className={classes.link}
+            to={{
+              pathname: `/timetable`,
+            }}>
+            Timetable{' '}
+          </Link>
+        </li>
         <Link
           className={classes.link}
           to={{
