@@ -26,7 +26,7 @@ export default function HomeButton() {
   const classes = useStyles();
 
   return (
-    <div className='swing'>
+    <div className='swing swing-position'>
       <Link
         className={classes.link}
         to={{

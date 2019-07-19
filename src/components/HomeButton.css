@@ -1,6 +1,9 @@
 .swing {
   animation: jittery 2s infinite;
   text-decoration: 'none';
+}
+
+.swing-position {
   position: fixed;
   bottom: 70px;
 }
