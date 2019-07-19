@@ -50,7 +50,7 @@ class Timetable extends Component {
     if (this.state.timetable.length !== 0) {
       day1 = this.state.timetable[0].timeslot.map(slot => (
         <Card style={card}>
-          <Link to='/speaker' style={link}>
+          <Link to='/timetable/details' style={link}>
             <CardActionArea style={cardaction} className='action-card'>
               <div style={cardPosition}>
                 <div className={slot.venue} />
@@ -72,7 +72,7 @@ class Timetable extends Component {
     if (this.state.timetable.length !== 0) {
       day2 = this.state.timetable[1].timeslot.map(slot => (
         <Card style={card}>
-          <Link to='/speaker' style={link}>
+          <Link to='/timetable/details' style={link}>
             <CardActionArea style={cardaction} className='action-card'>
               <div style={cardPosition}>
                 <div className={slot.venue} />

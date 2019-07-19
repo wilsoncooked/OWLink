@@ -25,6 +25,13 @@
 .dark-color-darker {
   background-color: #14131a;
 }
+.MuiExpansionPanelDetails-root {
+  padding: 0 !important;
+}
+
+.MuiSvgIcon-root {
+  color: #6539ec;
+}
 
 .category-button {
   border: 2px solid #8df3de;
@@ -57,7 +64,7 @@
 }
 
 .lower-idea-form {
-  height: 70vh;
+  height: 67vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

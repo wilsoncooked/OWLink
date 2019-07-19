@@ -163,7 +163,7 @@ function JoinLink(props) {
   return (
     <ListItem button>
       <Link
-        to='/timetable/idea/'
+        to='/timetable/details/'
         style={{
           textDecoration: 'none',
         }}>

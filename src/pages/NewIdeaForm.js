@@ -9,10 +9,8 @@ export default function NewIdeaForm() {
     <div className='new-idea-form'>
       <IdeaMainInput />
       <div className='lower-idea-form'>
-        <div>
-          <IdeaCategory />
-          <IdeaSkills />
-        </div>
+        <IdeaCategory />
+        <IdeaSkills />
         <SendIdea />
       </div>
     </div>

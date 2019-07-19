@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class SendIdea extends React.Component {
   constructor(props) {
@@ -26,9 +27,15 @@ class SendIdea extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <button className='submit-button' onClick={this.toggleClass}>
-        <b>Share</b>
-      </button>
+      <Link
+        className='link'
+        to={{
+          pathname: `/Timetable/details`,
+        }}>
+        <button className='submit-button' onClick={this.toggleClass}>
+          <b>Share</b>
+        </button>
+      </Link>
     );
   }
 }
