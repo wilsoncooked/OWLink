@@ -19,7 +19,7 @@ firebase.initializeApp({
 class SignUp extends Component {
   state = {isSignedIn: false};
   uiConfig = {
-    signInFlow: 'popup',
+    signInFlow: 'redirect',
     signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID],
     callbacks: {
       signInSuccess: () => false,
@@ -29,7 +29,8 @@ class SignUp extends Component {
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({isSignedIn: !!user});
-      console.log('user', user);
+      console.log('user', user.providerData[0]);
+      localStorage.setItem('user', JSON.stringify(user.providerData[0]));
     });
   };
 
@@ -50,10 +51,10 @@ class SignUp extends Component {
                   Log out
                 </Fab>
               </Box>
-              <Profile
+              {/* <Profile
                 name={firebase.auth().currentUser.displayName}
                 photo={firebase.auth().currentUser.photoURL}
-              />
+              /> */}
             </Grid>
           </React.Fragment>
         ) : (

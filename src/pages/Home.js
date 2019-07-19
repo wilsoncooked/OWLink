@@ -1,9 +1,11 @@
 import React from 'react';
 import HomeButton from '../components/HomeButton';
+import SignUp from './SignUp';
 
 export default function Home() {
   return (
     <div style={wrapper}>
+      <SignUp />
       <h1 style={h1}>Welcome on OwLink</h1>
       <h2 style={h2}>- Idea MatchMaker for OwlConf -</h2>
       <HomeButton />
