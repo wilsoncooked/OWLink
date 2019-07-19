@@ -8,6 +8,7 @@ import Liked from './LikedButton';
 import AddButton from './AddButton';
 import Unliked from './UnlikedButton';
 import './HomeButton.css';
+import {Link} from 'react-router-dom';
 
 const ideas = [
   {
@@ -62,10 +63,12 @@ class IdeasList extends React.Component {
             <p style={h3}>Share your idea </p>
           </div>
           <div className='swing'>
-            <AddButton className={addButton2} />
+            <Link to='/timetable/details/new'>
+              <AddButton className={addButton2} />
+            </Link>
           </div>
         </section>
-        <h1 style={h1}>Ideas he/she inspired </h1>
+        <h1 style={h1}>Shared ideas: </h1>
         <div style={root}>
           {ideas.map((idea, i) => {
             return (

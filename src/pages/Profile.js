@@ -15,11 +15,13 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Badge from '@material-ui/core/Badge';
+import Navigation from '../components/Navigation';
 
 export default function Profile(props) {
   let user = JSON.parse(localStorage.getItem('user'));
   return (
     <React.Fragment>
+      <h1 style={h1}>Profile</h1>
       <Grid container justify='center' alignItems='center'>
         <Box display='flex' flexDirection='column'>
           <UserInfo name={user.displayName} photo={user.photoURL} />
@@ -34,7 +36,8 @@ export default function Profile(props) {
 function UserInfo(props) {
   return (
     <React.Fragment>
-      <Card style={{width: '345px', marginTop: '30px', marginBottom: '10px'}}>
+      <Navigation />
+      <Card style={{width: '345px', marginTop: '10px', marginBottom: '10px'}}>
         <CardContent>
           <Avatar
             src={props.photo}
@@ -186,3 +189,11 @@ function JoinLink(props) {
     </ListItem>
   );
 }
+
+const h1 = {
+  color: '#8df3de',
+  margin: '10px 30px 0px 15px ',
+  fontWeight: '300',
+  letterSpacing: '1.2px',
+  fontSize: '1.6em',
+};

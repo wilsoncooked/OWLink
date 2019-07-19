@@ -132,7 +132,7 @@ const link = {
 };
 const h1 = {
   color: '#8df3de',
-  margin: '10px 30px 10px 30px ',
+  margin: '10px 30px 10px 15px ',
   fontWeight: '300',
   letterSpacing: '1.2px',
   fontSize: '1.6em',
