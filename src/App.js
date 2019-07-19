@@ -17,7 +17,7 @@ function App() {
           <Route path='/profile' component={Profile} />
           <Route path='/notification' component={Notification} />
           <Route exact path='/timetable' component={TimetableOverview} />
-          <Route path='/timetable/idea/new' component={NewIdeaForm} />
+          <Route path='/timetable/details/new' component={NewIdeaForm} />
           <Route path='/signup' component={SignUp} />
         </Switch>
       </BrowserRouter>
